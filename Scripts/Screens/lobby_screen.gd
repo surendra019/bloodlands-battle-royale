@@ -2,9 +2,10 @@ extends Node3D
 
 @onready var player = $PlayerContainer/Player
 @onready var camera = $Camera3D
+@onready var gui = $GUI
 
 var current_selected_character # reference of current selected character for rotation along its axis.
-
+const SETTINGS = preload("res://Scenes/settings.tscn")
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -33,3 +34,8 @@ func set_current_selected_character(input_position):
 
 func _on_emote_btn_pressed():
 	player.animation_player.play("dancing")
+
+
+func _on_settings_btn_pressed():
+	var s = SETTINGS.instantiate()
+	gui.add_child(s)

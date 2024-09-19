@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dci6y6xdgx2t" path="res://Assets/Fonts/monofonto rg.otf" id="1_oglwv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttv2u"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+bg_color = Color(0.156863, 0.156863, 0.156863, 0.666667)
 border_width_left = 2
 
 [sub_resource type="GDScript" id="GDScript_qmxto"]
@@ -37,6 +37,9 @@ func set_state(state: STATE):
 	
 	set(\"theme_override_styles/panel\", style)
 	label.set(\"label_settings\", label_settings)
+	
+	if state == STATE.SELECTED:
+		return id
 
 func _gui_input(event):
 	if event is InputEventScreenTouch:

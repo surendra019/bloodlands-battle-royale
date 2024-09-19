@@ -125,4 +125,5 @@ grow_horizontal = 0
 grow_vertical = 0
 _btn_texture = ExtResource("6_y8ixo")
 
+[connection signal="pressed" from="GUI/Control/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="GUI/Control/EmoteBtn" to="." method="_on_emote_btn_pressed"]
